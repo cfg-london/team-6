@@ -1,6 +1,14 @@
 <template>
-  <div class="container">
 
+  <div class="container">
+      <!--
+      Sizes:
+      tiny: 1rem
+      small: 2rem
+      medium: 4rem
+      large: 6rem
+      -->
+      <i class="large material-icons">insert_chart</i>
   </div>
 </template>
 

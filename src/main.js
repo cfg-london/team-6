@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import MenuIcon from 'vue-material-design-icons/menu.vue'
 
 Vue.config.productionTip = false
 
@@ -11,5 +12,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App, MenuIcon }
 })
