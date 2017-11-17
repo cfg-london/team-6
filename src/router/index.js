@@ -13,27 +13,28 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: 'nobel_prizes',
+      path: '/nobel_prizes',
 
     },
     {
-      path: 'nomination',
+      path: '/nomination',
 
     },
     {
-      path: 'ceremonies',
+      path: '/ceremonies',
     },
     {
-      path: 'alfred_nobel'
+      path: '/alfred_nobel'
     },
     {
-      path: 'educational'
+      path: '/educational'
     },
     {
-      path: 'events'
+      path: '/events'
     },
     {
-      path: 'search',
+      path: '/search',
+      name: 'Search',
       component: Search
     }
   ]

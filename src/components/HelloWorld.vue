@@ -11,7 +11,14 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" alt="Los Angeles">
+      <div class="container">
+        <div class="image-wrapper">
+          <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
+        </div>
+        <div class="">
+          <h1>Nobel Prize Center</h1>
+        </div>
+      </div>
     </div>
 
     <div class="item">
