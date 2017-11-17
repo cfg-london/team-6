@@ -1,22 +1,13 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div class="container landing">
+    <div class="row">
+      <div class="col image-wrapper">
+        <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
+      </div>
+      <div class="col">
+        <h1>Nobel Prize Center</h1>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -46,5 +37,46 @@ li {
 }
 a {
   color: #42b983;
+}
+.landing {
+  background-color: black;
+  height: 100vh;
+  color: white;
+}
+
+.image {
+  display: inline-block;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.image img {
+  width: 30%;
+}
+
+.image-wrapper img {
+  width: 40%;
+}
+
+.image-wrapper {
+  padding: 100px 0;
+}
+
+.col h1 {
+  margin: 200px 0;
+}
+
+.image, .explanation {
+  display: inline-block;
+  width: 50vw;
+  height: 80vh;
+}
+
+
+.landing {
+  width: 100%;
+  font-family: "Roboto Mono", monospace;
 }
 </style>

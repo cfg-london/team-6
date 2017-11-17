@@ -3,6 +3,9 @@
     <nav>
       <div class="nav-wrapper">
         <!-- <a href="#" class="brand-logo">Logo</a> -->
+        <!-- <div>
+          <router-link to='/'>Nobel Prize</router-link>
+        </div> -->
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><router-link to='/'>Home</router-link></li>
           <li><router-link to='/nobel_prizes'>Nobel Prizes and Laureates</router-link></li>
@@ -32,4 +35,17 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+nav {
+  background-color: white;
+}
+
+nav ul a {
+  color: black;
+}
+
+#app {
+  background-color: black;
+}
+
 </style>
