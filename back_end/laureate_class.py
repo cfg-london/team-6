@@ -10,9 +10,11 @@ class Laureate(object):
         self.wiki_link = wiki_link
         self.prize_list = prize_list # List of integers representing Prizes
         if len(args) == 5:
-            self.entity = Person(args[0], args[1], args[2], args[3], args[4],)
+            self.entity = Person(args[0], args[1], args[2], args[3], args[4])
+            self.isperson = 1
         elif len(args) == 1:
             self.entity = Organization(args[0])
+            self.isperson = 0
 
     def display_laureate(self):
         print(self.entity.description() + "and has a laureate ID of " + str(self.id ))
