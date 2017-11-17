@@ -10,9 +10,16 @@ class LAUREATE
                     - Gender
   - Subclass Organization:
                     - Organization name
-  - List Prizes : class PRIZE
-                    - Int  Prize_ID
-                    - Int Year
-                    - Category category
-                    - String motivation
-                    - List LAUREATES
+
+Prizes : class PRIZE
+  - Int  Prize_ID
+  - Int Year
+  - Category category
+  - String motivation
+  - List of Laureate IDs
+
+Backend construction:
+  1.) Iterate through all Prizes and generate their IDs, store Laureates (ID numbers)
+  2.) Iterate through all Laureates and create a map to their ID numbers
+  3.) All laureates have their own list of Prize ID's, and motivations attached to them
+  4.) This way there are no cyclic dependencies whatsoever
