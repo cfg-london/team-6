@@ -1,0 +1,18 @@
+class LAUREATE
+  - Int Laureate_ID
+  - Image
+  - Wikipedia Link
+  - Subclass Person:
+                    - String Firstname
+                    - String Lastname
+                    - DOB
+                    - DOD
+                    - Gender
+  - Subclass Organization:
+                    - Organization name
+  - List Prizes : class PRIZE
+                    - Int  Prize_ID
+                    - Int Year
+                    - Category category
+                    - String motivation
+                    - List LAUREATES
