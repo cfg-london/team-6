@@ -24,7 +24,7 @@ class Caller(object):
 
     def initialize_laureate_pool(self):
         self.laureate_pool = {}
-        ten_items = take(10, self.laureate_pool)
+        ten_items = take(300, self.get_all_laureates())
         for data in ten_items:
             self.laureate_pool[int(data['id'])] = Laureate(data)
 

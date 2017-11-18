@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from json import dumps
 from flask.ext.jsonpify import jsonpify
 
-db_connect = create_engine('sqlite:///test.db')
+db_connect = create_engine('sqlite:///database.db')
 app = Flask(__name__)
 api = Api(app)
 
