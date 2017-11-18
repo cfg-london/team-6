@@ -50,7 +50,7 @@ class Laureate(object):
             for pid, prize in self.prize_list.items():
                 category = prize['category']
                 year = prize['year']
-                self.image_link = "https://www.nobelprize.org/nobel_prizes/" + category + "/laureates/" + year + "/" + self.surname + "_postcard.jpg"
+                self.image_link = "https://www.nobelprize.org/nobel_prizes/" + category + "/laureates/" + year + "/" + self.surname.lower() + "_postcard.jpg"
         except:
             self.image_link = "http://db-access.org/wp-content/uploads/2015/04/redwarning.png"
             pass
