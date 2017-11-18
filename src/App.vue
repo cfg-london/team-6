@@ -6,7 +6,10 @@
         <!-- <div>
           <router-link to='/'>Nobel Prize</router-link>
         </div> -->
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+        <img class="" src="../static/images/logo.png">
+
+        <ul id="nav-brand" class="right hide-on-med-and-down">
           <li><router-link to='/'>Home</router-link></li>
           <li><router-link to='/nobel_prizes'>Nobel Prizes and Laureates</router-link></li>
           <li><router-link to='/nomination'>Nomination</router-link></li>
@@ -24,6 +27,7 @@
 <script>
 export default {
   name: 'app'
+
 }
 </script>
 
@@ -42,6 +46,10 @@ nav {
 
 nav ul a {
   color: black;
+}
+
+nav ul {
+  margin-top:22px;
 }
 
 #app {
