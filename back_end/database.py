@@ -23,7 +23,7 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS laureates (
 api = Caller()
 api.initialize_prize_pool()
 
-for id, laureate in api.laureate_pool.items(): 
+for id, laureate in api.laureate_pool.items():
   cursor.execute("INSERT INTO laureates VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (laureate.id, 1, laureate.image_link, laureate.wiki_link, str(laureate.prize_list), laureate.firstname.lower(), laureate.surname.lower(), laureate.dob, laureate.dod, laureate.gender, laureate.born_city.lower(), laureate.born_country.lower(), None))
 
 #name = "albert"
