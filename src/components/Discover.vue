@@ -1,12 +1,31 @@
 <template>
   <div class="container">
-    
+    <span style="color: #ffffff; display: block; padding: 10px; text-align: center;">
+      Nine Nobel Prize laureates who have changed the world - click on their links to find out more!
+    </span>
+    <table style="width:100%">
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Search',
+  name: 'Discover',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
