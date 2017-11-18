@@ -89,6 +89,19 @@ class Country (Resource):
     query = conn.execute(statement) 
     return {born_country : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
 
+class Date_Of_Birth(Resource):
+  def get(self, dob):
+    conn = db_connect.connect()
+    statement = "select * from laureates where dob = \"" + dob + "\"" 
+    query = conn.execute(statement) 
+    return {dob : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
+
+class City(Resource):
+  def get(self, born_city):
+    conn = db_connect.connect()
+    statement = "select * from laureates where lower(born_city) = \"" + born_city.lower() + "\"" 
+    query = conn.execute(statement) 
+    return {born_city : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
 
 
 if __name__ == '__main__':
@@ -104,6 +117,8 @@ if __name__ == '__main__':
     api.add_resource(Random, '/random/<number>')
     api.add_resource(ID, '/id/<num>')
     api.add_resource(Country, '/country/<born_country>')
+    api.add_resource(Date_Of_Birth, '/date_of_birth/<dob>')
+    api.add_resource(City, '/city/<born_city>')
     #CORS(api)
     app.run(host='0.0.0.0', port='5002')
     #conn = db_connect.connect()
