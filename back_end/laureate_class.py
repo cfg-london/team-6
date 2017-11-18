@@ -4,10 +4,11 @@ import prize
 
 class Laureate(object):
 
-    def __init__(self, ID, image_link, wiki_link, prize_list, *args):
-        self.id = ID
-        self.image_link = image_link
-        self.wiki_link = wiki_link
+    def __init__(self, data):
+    #def __init__(self, ID, image_link, wiki_link, prize_list, *args):
+        self.id = int(data['id'])
+        self.image_link = ""
+        self.wiki_link = ""
         self.prize_list = prize_list # List of integers representing Prizes
         if len(args) == 5:
             self.entity = Person(args[0], args[1], args[2], args[3], args[4])
@@ -39,6 +40,3 @@ class Organization(object):
     def description(self):
         return "The organization " + self.org_name
 
-if __name__=="__main__":
-    test_laureate = Laureate(2, "sham image link", "sham wiki link", "prizes", "Jack", "Pordi", "29/01/1998", "00/00/0000", "MALE")
-    test_laureate.display_laureate()

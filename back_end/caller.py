@@ -2,6 +2,8 @@ import requests
 import json
 from prize import Prize, calc_prize_id
 
+from laureate_class import Laureate
+
 class Caller(object):
 
     def __init__(self):
@@ -17,7 +19,8 @@ class Caller(object):
 
     def initialize_laureate_pool(self):
         self.laureate_pool = {}
-        #for laureate_data in self.
+        for data in self.get_all_laureates():
+            self.laureate_pool[int(data['id'])] = Laureate(data)
 
 
     def initialize_prize_pool(self):
@@ -26,7 +29,6 @@ class Caller(object):
              prize_key = calc_prize_id(prize_data)
              self.prize_pool[prize_key] = Prize(prize_data)
         
-
     def show_all_prizes(self):
         for id, p in self.prize_pool.items():
             p.show()
