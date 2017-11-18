@@ -6,13 +6,15 @@
         <!-- <div>
           <router-link to='/'>Nobel Prize</router-link>
         </div> -->
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+        <img src="../static/images/logo.png">
+
+        <ul id="nav-brand" class="right hide-on-med-and-down">
           <li><router-link to='/'>Home</router-link></li>
           <li><router-link to='/nobel_prizes'>Nobel Prizes and Laureates</router-link></li>
           <li><router-link to='/nomination'>Nomination</router-link></li>
           <li><router-link to='ceremonies'>Ceremonies</router-link></li>
           <li><router-link to='/alfred_nobel'>Alfred Nobel</router-link></li>
-          <li><router-link to='/education'>Educational</router-link></li>
           <li><router-link to='/events'>Events</router-link></li>
         </ul>
       </div>
@@ -24,6 +26,7 @@
 <script>
 export default {
   name: 'app'
+
 }
 </script>
 
