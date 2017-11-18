@@ -7,6 +7,8 @@ from itertools import islice
 
 class Laureate(object):
 
+    # Initializes everything. Unfortunately the API we had to work with didn't always
+    # return the same fields, so everything had to be wrapped in a try-catch block.
     def __init__(self, data):
         switcher = {
                    'physics': 10000,
@@ -46,7 +48,8 @@ class Laureate(object):
             self.born_country = ""
             #print("Exception!" + json.dumps(data, indent=4, sort_keys=True))
 
-        print(self.firstname + " " + self.surname + " has been initialized")
+
+        # Gets what an image url *should* be
         try:
             for pid, prize in self.prize_list.items():
                 category = prize['category']
@@ -55,14 +58,16 @@ class Laureate(object):
         except:
             self.image_link = "http://db-access.org/wp-content/uploads/2015/04/redwarning.png"
             pass
-        
+        # Loads wiki info 
         self.get_wiki_info()
-
+        # Prints Success
+        print(self.firstname + " " + self.surname + " has been initialized")
 
     def show(self):
         print(self.firstname + " " + self.surname + "has a laureate ID of " + str(self.id ) + " and was awarded the nobel prizes: " + str(self.prize_list.items()))
         print(self.description)
     
+    # For getting wikipedia summary and link
     def get_wiki_info(self):
         try:
             if self.firstname != "" and self.surname != "":

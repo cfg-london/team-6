@@ -7,6 +7,7 @@ from laureate_class import Laureate
 
 class Caller(object):
 
+    # Initiates the api caller
     def __init__(self):
         self.url = "http://api.nobelprize.org/v1/"
         self.get_all_laureates()
@@ -14,10 +15,12 @@ class Caller(object):
         self.initialize_laureate_pool()
         self.initialize_prize_pool()
 
+    # Loads all laureates into a json
     def get_all_laureates(self):
         self.laureate_list = requests.get(self.url + "laureate.json?").json()['laureates']
         return self.laureate_list
 
+    # Loads all prizes into a json
     def get_all_prizes(self):
         self.prize_list = requests.get(self.url + "prize.json?").json()['prizes']
         return self.prize_list

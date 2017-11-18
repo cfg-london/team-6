@@ -41,7 +41,7 @@ class GenericSearch(Resource):
             words = string_to_search.split(' ')
             for word in words:
                 match_score += 70 * fuzz.ratio(word, d['firstname'].lower())
-                match_score += 40 * fuzz.ratio(word, d['surname'].lower())
+                match_score += 70 * fuzz.ratio(word, d['surname'].lower())
                 match_score += fuzz.partial_ratio(search_query, d['description']) * d['description'].count(word)
                 match_score += 3 * fuzz.ratio(search_query, d['dob'])
                 match_score += 3 * fuzz.ratio(search_query, d['dod'])
