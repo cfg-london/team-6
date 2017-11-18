@@ -38,12 +38,12 @@ export default {
   methods: {
     search () {
       console.log("search query been submitted")
-      this.$http.get('http://34.230.141.99:5002/search/' + this.query)
+      this.$http.get('http://34.230.141.99:5002/search/' + this.query + '/1')
       .then(function(res) {
         console.log(res.body);
         this.firstResult = res.body[0];
         this.imageUrl = this.firstResult.image_link;
-        this.name = this.firstResult.firstname + this.firstResult.surname;
+        this.name = this.firstResult.firstname + ' ' + this.firstResult.surname;
         this.wikiLink = this.firstResult.wiki_link;
       }, function(error) {
       })
