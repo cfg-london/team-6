@@ -5,7 +5,7 @@ from caller import Caller
 connection = sqlite3.connect("test.db")
 
 cursor = connection.cursor()
-cursor.execute("""CREATE TABLE IF NOT EXISTS laureate (
+cursor.execute("""CREATE TABLE IF NOT EXISTS laureates (
   id int,
   poo bit,
   image_link VARCHAR(30), 
@@ -24,7 +24,7 @@ api = Caller()
 api.initialize_prize_pool()
 
 for id, laureate in api.laureate_pool.items(): 
-  cursor.execute("INSERT INTO laureate VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (laureate.id, 1, laureate.image_link, laureate.wiki_link, str(laureate.prize_list), laureate.firstname, laureate.surname, laureate.dob, laureate.dod, laureate.gender, None))
+  cursor.execute("INSERT INTO laureates VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (laureate.id, 1, laureate.image_link, laureate.wiki_link, str(laureate.prize_list), laureate.firstname, laureate.surname, laureate.dob, laureate.dod, laureate.gender, laureate.born_city, laureate.born_country, None))
 
 
 print (cursor.fetchall())
