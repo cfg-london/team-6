@@ -148,6 +148,6 @@ table {
 }
 
 .container {
-  height: 300vh;
+  height: 100%;
 }
 </style>
