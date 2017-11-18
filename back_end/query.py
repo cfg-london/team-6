@@ -7,11 +7,6 @@ from flask_cors import CORS, cross_origin
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
-db_connect = create_engine('sqlite:///database.db')
-app = Flask(__name__)
-CORS(app)
-api = Api(app)
-CORS(api)
 
 class Laureates(Resource):
   def get(self):
@@ -80,12 +75,17 @@ class Random(Resource):
 
 
 
-api.add_resource(Laureates, '/laureates')
-api.add_resource(First_Name, '/first_name/<first_name>')
-api.add_resource(Last_Name, '/last_name/<last_name>')
-api.add_resource(Full_Name, '/full_name/<full_name>')
-api.add_resource(GenericSearch, '/search/<search_query>')
-api.add_resource(Random, '/random/<number>')
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port='5002')
+    db_connect = create_engine('sqlite:///database.db')
+    app = Flask(__name__)
+    CORS(app)
+    api = Api(app)
+    api.add_resource(Laureates, '/laureates')
+    api.add_resource(First_Name, '/first_name/<first_name>')
+    api.add_resource(Last_Name, '/last_name/<last_name>')
+    api.add_resource(Full_Name, '/full_name/<full_name>')
+    api.add_resource(GenericSearch, '/search/<search_query>')
+    api.add_resource(Random, '/random/<number>')
+    #CORS(api)
+    app.run(host='0.0.0.0', port='5002')
