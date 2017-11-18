@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Search from '@/components/Search'
 import Map from '@/components/Map'
+import Discover from '@/components/Discover'
 import 'vue-material-design-icons/styles.css'
 
 import Article from '@/components/Article'
@@ -21,7 +22,7 @@ export default new Router({
 
     },
     {
-      path: 'nomination',
+      path: 'nominations',
 
     },
     {
@@ -49,6 +50,11 @@ export default new Router({
       path: '/map',
       name: 'Map',
       component: Map
+    },
+    {
+      path: '/discover',
+      name: 'Discover',
+      component: Discover
     }
   ]
 })
