@@ -35,7 +35,7 @@ export default {
   methods: {
     search () {
       console.log("search query been submitted")
-      this.$http.get('http://34.230.141.99:5002/search/' + this.query + '/1')
+      this.$http.get('http://34.230.141.99:5002/search/' + this.query + '/5')
       .then(function(res) {
         console.log(res.body);
         this.firstResult = res.body[0];

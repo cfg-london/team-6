@@ -90,7 +90,7 @@ export default {
       this.$http.get('http://34.230.141.99:5002/random/9')
       .then(function(res) {
         console.log(res.body);
-        this.results = res.body.Random;
+        this.results = res.body.random;
         // this.imageUrl = this.firstResult.image_link;
         // this.name = this.firstResult.firstname + ' ' + this.firstResult.surname;
         // this.wikiLink = this.firstResult.wiki_link;
