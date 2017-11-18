@@ -3,12 +3,15 @@ from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
 from flask.ext.jsonpify import jsonpify
+from flask_cors import CORS, cross_origin
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
 db_connect = create_engine('sqlite:///database.db')
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
+CORS(api)
 
 class Laureates(Resource):
   def get(self):
@@ -39,15 +42,22 @@ class GenericSearch(Resource):
         for l in all_laureates:
             d = dict(l.items())
             match_score = 0
-            match_score += 10 * fuzz.ratio(search_query, d['firstname'] + " " + d['surname'])
-            match_score += fuzz.ratio(search_query, d['dob'])
-            match_score += fuzz.ratio(search_query, d['dod'])
-            match_score += fuzz.ratio(search_query, d['born_city'])
-            match_score += fuzz.ratio(search_query, d['born_country'])
-            match_score += fuzz.partial_ratio(search_query, d['organisation'])
-            match_score += fuzz.partial_ratio(search_query, d['description'])
+            words = string_to_search.split(' ')
+            for word in words:
+                match_score += 40 * fuzz.ratio(word, d['firstname'].lower())
+                match_score += 60 * fuzz.ratio(word, d['surname'].lower())
+            match_score += 3 * fuzz.ratio(search_query, d['dob'])
+            match_score += 3 * fuzz.ratio(search_query, d['dod'])
+            match_score += 5 * fuzz.ratio(search_query, d['born_city'])
+            match_score += 4 * fuzz.ratio(search_query, d['born_country'])
+            match_score += 15 * fuzz.partial_ratio(search_query, d['organisation'])
+            #match_score += fuzz.ratio(search_query, d['description']) * len(d['description'])
             return_json[match_score] = d
-        return return_json
+        return_entries = []
+        for score, entry in reversed(sorted(return_json.items())):
+            entry['score'] = score
+            return_entries.append(entry)
+        return return_entries[:10]
             
 
 class Full_Name(Resource):
