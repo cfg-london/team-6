@@ -9,23 +9,28 @@
         </div>
       </form>
     </div>
-    <table>
-    <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-    </tr>
-</table>
+    <div class="white left">
+      <a href="#">
+        <table>
+          <tr>
+            <td rowspan="2">
+              <img src="albert.jpg" alt="Albert Museum" />
+            </td>
+            <td>
+              (name from back end)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              (everything else from backend)
+            </td>
+          </tr>
+        </table>
+      </a>
+    </div>
+    <div class="white right">
+      Relevant information
+    </div>
   </div>
 </template>
 
@@ -91,7 +96,6 @@ a {
   width: 50vw;
   height: 80vh;
 }
-
 
 .landing {
   width: 100%;
