@@ -3,6 +3,8 @@ from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
 from flask.ext.jsonpify import jsonpify
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 
 db_connect = create_engine('sqlite:///database.db')
 app = Flask(__name__)
@@ -35,10 +37,17 @@ class GenericSearch(Resource):
         return_json = {}
         string_to_search = search_query.replace('_', ' ')
         for l in all_laureates:
+            d = dict(l.items())
             match_score = 0
-            match_score = 600
-            return l
-
+            match_score += 10 * fuzz.ratio(search_query, d['firstname'] + " " + d['surname'])
+            match_score += fuzz.ratio(search_query, d['dob'])
+            match_score += fuzz.ratio(search_query, d['dod'])
+            match_score += fuzz.ratio(search_query, d['born_city'])
+            match_score += fuzz.ratio(search_query, d['born_country'])
+            match_score += fuzz.partial_ratio(search_query, d['organisation'])
+            match_score += fuzz.partial_ratio(search_query, d['description'])
+            return_json[match_score] = d
+        return return_json
             
 
 class Full_Name(Resource):
