@@ -28,10 +28,20 @@ class Last_Name(Resource):
     query = conn.execute(statement)
     return {last_name : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
 
+class Full_Name(Resource):
+  def get(self, full_name):
+    conn = db_connect.connect()
+    name_list = full_name.split('%')
+    first_name = name_list[0]
+    last_name = name_list[1]  
+    statement = "select * from laureates where lower(surname) = \"" + last_name.lower() + "\"" ++"and lower(firstname) = \"" + first_name.lower() + "\""
+
+
 class Query(Resource):
 api.add_resource(Laureates, '/laureates')
 api.add_resource(First_Name, '/first_name/<first_name>')
 api.add_resource(Last_Name, '/last_name/<last_name>')
+api.add_resource(Full_Name, '/full_name/<full_name>')
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port='5002')
