@@ -73,7 +73,22 @@ class Random(Resource):
     conn = db_connect.connect()
     statement = "SELECT * FROM laureates ORDER by RANDOM() LIMIT " + number
     query = conn.execute(statement)
-    return {'Random' : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
+    return {'random' : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
+
+class ID (Resource):
+  def get(self, num):
+    conn = db_connect.connect()
+    statement = "select * from laureates where id = \"" + num + "\""
+    query = conn.execute(statement)
+    return {num : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
+
+class Country (Resource):
+  def get(self, born_country):
+    conn = db_connect.connect()
+    statement = "select * from laureates where lower(born_country) = \"" + born_country.lower() + "\"" 
+    query = conn.execute(statement) 
+    return {born_country : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
+
 
 
 if __name__ == '__main__':
@@ -87,6 +102,9 @@ if __name__ == '__main__':
     api.add_resource(Full_Name, '/full_name/<full_name>')
     api.add_resource(GenericSearch, '/search/<search_query>/<no_of_results>')
     api.add_resource(Random, '/random/<number>')
+    api.add_resource(ID, '/id/<num>')
+    api.add_resource(Country, '/country/<born_country>')
+    #CORS(api)
     app.run(host='0.0.0.0', port='5002')
     #conn = db_connect.connect()
     #all_laureates = conn.execute("select * from laureates")

@@ -12,7 +12,7 @@
         <ul id="nav-brand" class="right hide-on-med-and-down" style="padding-right:40px">
           <li><router-link to='/'>Home</router-link></li>
           <li><router-link to='/discover'>Discover</router-link></li>          
-          <li><router-link to='/nobel_prizes'>Laureates</router-link></li>
+          <li><router-link to='/laureates'>Laureates</router-link></li>
           <li><router-link to='/nomination'>Nominations</router-link></li>
           <li><router-link to='ceremonies'>Ceremonies</router-link></li>
           <li><router-link to='/alfred_nobel'>About</router-link></li>

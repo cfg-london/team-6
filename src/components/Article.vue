@@ -13,7 +13,7 @@
         <div class="col s12 m7">
           <div class="card">
             <div class="card-content">
-                <p><strong>Albert Einstein</strong></p>
+                <h2><strong>Albert Einstein</strong></h2>
         		<p><strong><span itemprop="Name"><span itemprop="givenName">Albert</span><span itemprop="familyName"> Einstein</span></span></strong>
 				</p>
 				<p><strong>Born:</strong> <span itemprop="birthDate">14 March 1879</span>, Ulm, Germany</p>
@@ -32,41 +32,21 @@
           </div>
 
         </div>
-        <div class="col s12 m12">
-          <div class="card">
-            <div class="card-content">
-                <p><strong>Albert Einstein</strong></p>
-        		<p><strong><span itemprop="Name"><span itemprop="givenName">Albert</span><span itemprop="familyName"> Einstein</span></span></strong>
-				</p>
-				<p><strong>Born:</strong> <span itemprop="birthDate">14 March 1879</span>, Ulm, Germany</p>
-				<p><strong>Died:</strong> <span itemprop="deathDate">18 April 1955</span>, Princeton, NJ, USA</p>
-						
-						
-				<p><strong>Affiliation at the time of the award:</strong> <span itemprop="affiliation">Kaiser-Wilhelm-Institut (now Max-Planck-Institut) für Physik, Berlin, Germany</span></p>
-				<p><strong>Prize motivation:</strong> "for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect"</p>
-						
-			    <p><strong>Field:</strong> theoretical physics</p>
-						
-		                		
-				<p><i>Albert Einstein received his Nobel Prize one year later, in 1922.</i></p>
-				<p><strong>Prize share:</strong> 1/1</p>        
-            </div>
-          </div>
-        </div>
+        
         <div class="col s12 m12 center-align">
-          <a class="waves-effect waves-light btn-large">Subscribe</a>
-          <h2>to our newsletter!</h2>
+ 
         </div>
         <div class="col s12 m12">
           <div class="card-panel teal">
-            <span class="white-text">
-                Get to know our latest news about Nobel Prize
-            </span>
+            <div class="col s12 m12 center-align">
+              <h2 class="waves-effect waves-light btn-large centre">Subscribe</h2>
+            </div>
+          <a> to our newsletter! Get to know our latest news about Nobel Prize! </a>
           </div>
       </div>
       </div>
       
-      <div class="row">
+      <div class="row more">
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
@@ -143,7 +123,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: gold;
 }
 .landing {
   background-color: black;
@@ -191,11 +171,16 @@ a {
 }
 
 .card-panel {
-    height: 100%;
-    text-align: left;
+    height: 50%;
 }
 
 .btn-large {
     color: white;
+    background: gold;
 }
+
+.more {
+  margin: 50px 0 0 0;
+}
+
 </style>

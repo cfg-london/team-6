@@ -18,11 +18,11 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: 'nobel_prizes',
+      path: 'laureates',
 
     },
     {
-      path: 'nominations',
+      path: '/nominations',
 
     },
     {

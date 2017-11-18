@@ -9,7 +9,7 @@ import nameCard from './components/nameCard'
 
 import 'vue-event-calendar/dist/style.css'
 import vueEventCalendar from 'vue-event-calendar'
-Vue.use(vueEventCalendar, {locale: 'en',color: 'orange'})
+Vue.use(vueEventCalendar, {locale: 'en',color: 'gold'})
 Vue.use(vueResource)
 Vue.component('name-card', nameCard)
 
