@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container search-div">
     <div class="nav-wrapper">
       <form>
         <div class="input-field">
@@ -9,14 +9,11 @@
         </div>
       </form>
     </div>
-    <div class="left">
+    <div class="left" :class="{ hidden: isHiden }">
       <a href="#">
         <name-card :laureate-name="name" :image-url="imageUrl" :link="wikiLink">
         </name-card>
       </a>
-    </div>
-    <div class="white right">
-      Relevant information
     </div>
   </div>
 </template>
@@ -32,7 +29,7 @@ export default {
       firstResult: '',
       imageUrl: '',
       wikiLink: '',
-      display: false
+      isHiden: true
     }
   },
   methods: {
@@ -45,6 +42,7 @@ export default {
         this.imageUrl = this.firstResult.image_link;
         this.name = this.firstResult.firstname + ' ' + this.firstResult.surname;
         this.wikiLink = this.firstResult.wiki_link;
+        this.isHiden = false;
       }, function(error) {
       })
     }
@@ -54,6 +52,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.search-div {
+  height: 100vh !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 h1, h2 {
   font-weight: normal;
 }
@@ -128,5 +134,9 @@ th, td {
 
 .left {
   margin: 100px 0 0 0;
+}
+
+.input-field input {
+  /* background-color:  */
 }
 </style>
