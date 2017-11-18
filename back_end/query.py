@@ -12,7 +12,7 @@ class Laureates(Resource):
   def get(self):
     conn = db_connect.connect()
     query = conn.execute("select * from laureates")
-    return {'laureates' : [i for i in query.cursor.fetchall()]}
+    return {'laureates' : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
 
 class First_Name(Resource):
   def get(self, first_name):
@@ -46,7 +46,9 @@ class Full_Name(Resource):
     name_list = full_name.split('%')
     first_name = name_list[0]
     last_name = name_list[1]  
-    statement = "select * from laureates where lower(surname) = \"" + last_name.lower() + "\"" ++"and lower(firstname) = \"" + first_name.lower() + "\""
+    statement = "select * from laureates where lower(surname) = \"" + last_name.lower() + "\"" +"and lower(firstname) = \"" + first_name.lower() + "\""
+    query = conn.execute(statement)
+    return {full_name : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
 
 
 api.add_resource(Laureates, '/laureates')
