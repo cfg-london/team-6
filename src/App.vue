@@ -16,6 +16,7 @@
           <li><router-link to='/nomination'>Nominations</router-link></li>
           <li><router-link to='ceremonies'>Ceremonies</router-link></li>
           <li><router-link to='/alfred_nobel'>About</router-link></li>
+          <li><router-link to='/search'>Search</router-link></li>
         </ul>
       </div>
     </nav>
