@@ -19,7 +19,7 @@ class First_Name(Resource):
     conn = db_connect.connect()
     statement = "select * from laureates where firstname = \"" + first_name + "\""
     query = conn.execute(statement)
-    return {first_name : [i for i in query.cursor.fetchall()]}
+    return {first_name : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
 
 
 api.add_resource(Laureates, '/laureates')
