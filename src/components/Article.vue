@@ -37,11 +37,11 @@
  
         </div>
         <div class="col s12 m12">
-          <div class="card-panel teal">
+          <div class="card-panel teal" style="text-align: center;">
             <div class="col s12 m12 center-align">
               <h2 class="waves-effect waves-light btn-large centre">Subscribe</h2>
             </div>
-          <a> to our newsletter! Get to know our latest news about Nobel Prize! </a>
+          <a> to our newsletter and get to know our latest news about Nobel Prizes </a>
           </div>
       </div>
       </div>
@@ -51,14 +51,16 @@
           <div class="card">
             <div class="card-image">
               <img src="images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
+              <span class="card-title">Card Title </span>
             </div>
             <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p><strong> Did you know ? </strong></p>
+              <p>111 Nobel Prizes in Physics have been awarded between 1901-2017.</p>
+              <p> 47 Physics Prizes have been given to one Laureate only. </p>
+              <p> 2 women have been awarded the Physics Prize so far. </p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="#">Click to find out more fun facts</a>
             </div>
           </div>
         </div>
@@ -69,11 +71,10 @@
               <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p>The Nobel Prize in Physics 2017 was divided, one half awarded to Rainer Weiss, the other half jointly to Barry C. Barish and Kip S. Thorne. "for decisive contributions to the LIGO detector and the observation of gravitational waves".</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="#">Click to explore 2017 Nobel Prize in Physics</a>
             </div>
           </div>
         </div>
@@ -84,11 +85,15 @@
               <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p><strong> Most Popular Physics Laureates </strong></p>
+              <p>1.Albert Einstein</p>
+              <p>2.Marie Curie</p>
+              <p>3.Niels Bohr</p>
+              <p> 4.James Chadwick </p>
+              <p>5.J.J. Thomson</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="#">Click to explore more about the most popular physics laureates</a>
             </div>
           </div>
         </div>
