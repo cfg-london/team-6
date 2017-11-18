@@ -11,21 +11,8 @@
     </div>
     <div class="left">
       <a href="#">
-        <table>
-          <tr>
-            <td rowspan="2">
-              <img src="albert.jpg" alt="Albert Museum" />
-            </td>
-            <td>
-              (name from back end)
-            </td>
-          </tr>
-          <tr>
-            <td>
-              (everything else from backend)
-            </td>
-          </tr>
-        </table>
+        <name-card>
+        </name-card>
       </a>
     </div>
     <div class="white right">
