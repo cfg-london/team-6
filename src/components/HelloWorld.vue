@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="container landing">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -54,6 +55,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</div>
   <span style="color: #ffffff; margin: 0px; display: block; padding: 22px; font-size: 20pt; font-family: monospace; background-color: #222222;">
     Events
   </span>
@@ -101,12 +103,14 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: gold;
 }
 .landing {
   background-color: black;
-  height: 100vh;
+  height: 85vh;
   color: white;
+  width: 100%;
+  font-family: "Roboto Mono", monospace;
 }
 
 .image {
@@ -138,27 +142,21 @@ a {
 .image, .explanation {
   display: inline-block;
   width: 50vw;
-  height: 80vh;
-}
-
-
-.landing {
-  width: 100%;
-  font-family: "Roboto Mono", monospace;
+  height: 100%;
 }
 
 .caption-wrapper {
   width: 50%;
   float: left;
   padding: 100px 0;
-
 }
 
-.black .title {
-  color: black;
+
+.__vev_calendar-wrapper .cal-wrapper .cal-header {
+  background-color: grey;
 }
 
 #myCarousel {
-  height: 80vh;
+  height: 100%;
 }
 </style>
