@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Search from '@/components/Search'
+import 'vue-material-design-icons/styles.css'
+
 
 Vue.use(Router)
 
@@ -13,28 +15,27 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/nobel_prizes',
+      path: 'nobel_prizes',
 
     },
     {
-      path: '/nomination',
+      path: 'nomination',
 
     },
     {
-      path: '/ceremonies',
+      path: 'ceremonies',
     },
     {
-      path: '/alfred_nobel'
+      path: 'alfred_nobel'
     },
     {
-      path: '/educational'
+      path: 'educational'
     },
     {
-      path: '/events'
+      path: 'events'
     },
     {
       path: '/search',
-      name: 'Search',
       component: Search
     }
   ]

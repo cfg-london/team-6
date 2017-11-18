@@ -1,6 +1,31 @@
 <template>
   <div class="container">
-    <h2>henweiwu!</h2>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+				<label class="mdl-button mdl-js-button mdl-button--icon" for="site-search">
+					<i class="material-icons">search</i>
+				</label>
+				<div class="mdl-textfield__expandable-holder">
+					<input class="mdl-textfield__input" type="search" id="site-search" />
+					<label class="mdl-textfield__label" for="site-search">search</label>
+				</div>
+    </div>
+    <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+</table>
   </div>
 </template>
 
@@ -71,5 +96,10 @@ a {
 .landing {
   width: 100%;
   font-family: "Roboto Mono", monospace;
+}
+th, td {
+    color: #FFF;
+    padding: 15px;
+    text-align: center;
 }
 </style>
