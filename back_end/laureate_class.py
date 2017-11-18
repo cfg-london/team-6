@@ -44,15 +44,6 @@ class Laureate(object):
             self.born_city = ""
             self.born_country = ""
             #print("Exception!" + json.dumps(data, indent=4, sort_keys=True))
-        if self.firstname != "" and self.surname != "":
-            self.description = Wiki.summary(self.firstname + " "+ self.surname)
-            self.wiki_link= Wiki.page(self.firstname + " " + self.surname).url
-        elif self.firstname != "":
-            self.description = Wiki.summary(self.firstname)
-            self.wiki_link= Wiki.page(self.firstname).url
-        else:
-            self.wiki_link = ""
-            self.description = ""
 
         print(self.firstname + " " + self.surname + "has been initialized")
         try:
@@ -63,9 +54,27 @@ class Laureate(object):
         except:
             self.image_link = "http://db-access.org/wp-content/uploads/2015/04/redwarning.png"
             pass
-                 
+        
+        self.get_wiki_info()
+        
 
 
     def show(self):
         print(self.firstname + " " + self.surname + "has a laureate ID of " + str(self.id ) + " and was awarded the nobel prizes: " + str(self.prize_list.items()))
-        
+    
+    def get_wiki_info(self):
+        while True:
+            time.sleep(1)
+            try:
+                if self.firstname != "" and self.surname != "":
+                    self.description = Wiki.summary(self.firstname + " "+ self.surname)
+                    self.wiki_link= Wiki.page(self.firstname + " " + self.surname).url
+                elif self.firstname != "":
+                    self.description = Wiki.summary(self.firstname)
+                    self.wiki_link= Wiki.page(self.firstname).url
+                else:
+                    self.wiki_link = ""
+                    self.description = ""
+                break
+            except:
+                pass
