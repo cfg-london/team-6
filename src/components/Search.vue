@@ -10,10 +10,10 @@
       </form>
     </div>
     <div class="left" :class="{ hidden: isHiden }">
-      <a href="#">
+      <router-link to="/article">
         <name-card :laureate-name="name" :image-url="imageUrl" :link="wikiLink">
         </name-card>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
