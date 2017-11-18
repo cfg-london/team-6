@@ -3,7 +3,7 @@
     <div class="nav-wrapper">
       <form>
         <div class="input-field">
-          <input id="search" type="search" required>
+          <input id="search" type="search" v-on:submit.prevent="search" v-on:keyup.enter="search" v-model="query" required>
           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
@@ -11,7 +11,7 @@
     </div>
     <div class="left">
       <a href="#">
-        <name-card>
+        <name-card :laureate-name="name" :image-url="imageUrl" :link="wikiLink">
         </name-card>
       </a>
     </div>
@@ -26,9 +26,29 @@ export default {
   name: 'Search',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      query: "",
+      msg: 'Welcome to Your Vue.js App',
+      name: '',
+      firstResult: '',
+      imageUrl: '',
+      wikiLink: '',
+      display: false
     }
-  }
+  },
+  methods: {
+    search () {
+      console.log("search query been submitted")
+      this.$http.get('http://34.230.141.99:5002/search/' + this.query)
+      .then(function(res) {
+        console.log(res.body);
+        this.firstResult = res.body[0];
+        this.imageUrl = this.firstResult.image_link;
+        this.name = this.firstResult.firstname + this.firstResult.surname;
+        this.wikiLink = this.firstResult.wiki_link;
+      }, function(error) {
+      })
+    }
+  } 
 }
 </script>
 
@@ -102,11 +122,11 @@ th, td {
   font-size: 30px;
 }
 
-table {
-  margin: 70px 0 0 0;
+.container {
+  height: 100%;
 }
 
-.container {
-  height: 300vh;
+.left {
+  margin: 100px 0 0 0;
 }
 </style>
