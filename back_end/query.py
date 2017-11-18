@@ -82,6 +82,14 @@ class ID (Resource):
     query = conn.execute(statement)
     return {num : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
 
+class Country (Resource):
+  def get(self, born_country):
+    conn = db_connect.connect()
+    statement = "select * from laureates where lower(born_country) = \"" + born_country.lower() + "\"" 
+    query = conn.execute(statement) 
+    return {born_country : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
+
+
 
 if __name__ == '__main__':
     db_connect = create_engine('sqlite:///database.db')
@@ -95,6 +103,7 @@ if __name__ == '__main__':
     api.add_resource(GenericSearch, '/search/<search_query>/<no_of_results>')
     api.add_resource(Random, '/random/<number>')
     api.add_resource(ID, '/id/<num>')
+    api.add_resource(Country, '/country/<born_country>')
     #CORS(api)
     app.run(host='0.0.0.0', port='5002')
     #conn = db_connect.connect()
