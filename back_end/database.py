@@ -2,7 +2,7 @@ import sqlite3
 from laureate_class import Laureate
 from caller import Caller
 
-connection = sqlite3.connect("test.db")
+connection = sqlite3.connect("database.db")
 
 cursor = connection.cursor()
 cursor.execute("""CREATE TABLE IF NOT EXISTS laureates (
@@ -25,7 +25,7 @@ api = Caller()
 api.initialize_prize_pool()
 
 for id, laureate in api.laureate_pool.items():
-  cursor.execute("INSERT INTO laureates VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (laureate.id, 1, laureate.image_link, laureate.wiki_link, str(laureate.prize_list), laureate.firstname, laureate.surname, laureate.dob, laureate.dod, laureate.gender, laureate.born_city, laureate.born_country, None, laureate.description))
+  cursor.execute("INSERT INTO laureates VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (laureate.id, 1, laureate.image_link, laureate.wiki_link, str(laureate.prize_list), laureate.firstname, laureate.surname, laureate.dob, laureate.dod, laureate.gender, laureate.born_city, laureate.born_country, None, laureate.description))
 
 
 #name = "albert"

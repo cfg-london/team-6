@@ -1,6 +1,7 @@
 import requests
 import json
 from prize import Prize, calc_prize_id
+from itertools import islice
 
 from laureate_class import Laureate
 
@@ -23,7 +24,8 @@ class Caller(object):
 
     def initialize_laureate_pool(self):
         self.laureate_pool = {}
-        for data in self.get_all_laureates():
+        ten_items = take(300, self.get_all_laureates())
+        for data in ten_items:
             self.laureate_pool[int(data['id'])] = Laureate(data)
 
 
@@ -41,6 +43,9 @@ class Caller(object):
         for id, l in self.laureate_pool.items():
             l.show()
 
+def take(n, iterable):
+    "Return first n items of the iterable as a list"
+    return list(islice(iterable, n))
 
 #api = Caller()
 #api.initialize_prize_pool()

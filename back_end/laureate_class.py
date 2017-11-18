@@ -3,6 +3,7 @@ import requests
 import prize
 import wikipedia as Wiki
 import time
+from itertools import islice
 
 class Laureate(object):
 
@@ -56,14 +57,13 @@ class Laureate(object):
             pass
         
         self.get_wiki_info()
-        
 
 
     def show(self):
         print(self.firstname + " " + self.surname + "has a laureate ID of " + str(self.id ) + " and was awarded the nobel prizes: " + str(self.prize_list.items()))
+        print(self.description)
     
     def get_wiki_info(self):
-        time.sleep(1)
         try:
             if self.firstname != "" and self.surname != "":
                 self.description = Wiki.summary(self.firstname + " "+ self.surname)
