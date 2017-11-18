@@ -42,13 +42,27 @@ class GenericSearch(Resource):
             for word in words:
                 match_score += 70 * fuzz.ratio(word, d['firstname'].lower())
                 match_score += 70 * fuzz.ratio(word, d['surname'].lower())
-                match_score += fuzz.partial_ratio(search_query, d['description']) * d['description'].count(word)
-                match_score += 3 * fuzz.ratio(search_query, d['dob'])
-                match_score += 3 * fuzz.ratio(search_query, d['dod'])
-                match_score += 3 * fuzz.partial_ratio(search_query, d['prize_list'])
-                match_score += 5 * fuzz.ratio(search_query, d['born_city'])
-                match_score += 3 * fuzz.ratio(search_query, d['born_country'])
-                match_score += 20 * fuzz.partial_ratio(search_query, d['organisation'])
+                if (word in d['surname']):
+                    match_score *= 5
+                if (word == d['firstname'].lower()):
+                    match_score *= 5
+                if (word in d['firstname']):
+                    match_score *= 2
+                match_score += fuzz.partial_ratio(word, d['description']) * d['description'].count(word)
+                match_score += 3 * fuzz.ratio(word, d['dob'])
+                match_score += 3 * fuzz.ratio(word, d['dod'])
+                match_score += 3 * fuzz.ratio(word, d['gender'])
+                if (word == 'female' and d['gender'] == 'female'):
+                    match_score *= 15
+                match_score += 3 * fuzz.partial_ratio(word, d['prize_list'])
+                if (fuzz.partial_ratio(word, d['prize_list']) > 80):
+                    match_score *= 5
+                if (fuzz.ratio(word, d['born_city']) > 80):
+                    match_score *= 10
+                if (fuzz.ratio(word, d['born_country']) > 80):
+                    match_score *= 5
+                if (fuzz.partial_ratio(word, d['organisation']) > 90):
+                    match_score *= 10
             return_json[match_score] = d
         return_entries = []
         for score, entry in reversed(sorted(return_json.items())):
