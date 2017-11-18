@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import MenuIcon from 'vue-material-design-icons/menu.vue'
 
+import 'vue-event-calendar/dist/style.css'
+import vueEventCalendar from 'vue-event-calendar'
+Vue.use(vueEventCalendar, {locale: 'en',color: 'orange'})
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -12,5 +16,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App, MenuIcon }
+  components: { App, MenuIcon, vueEventCalendar}
 })

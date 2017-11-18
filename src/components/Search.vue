@@ -9,7 +9,7 @@
         </div>
       </form>
     </div>
-    <div class="white left">
+    <div class="left">
       <a href="#">
         <table>
           <tr>

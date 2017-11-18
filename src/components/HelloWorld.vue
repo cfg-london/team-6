@@ -64,20 +64,36 @@
     </div> -->
     <div style="max-width:450px;">
 <iframe width="100%" height="300"  src="https://www.nobelprize.org/mediaplayer/embed_front_vod_tb.html?id=2723" style="border:0;margin-bottom:0px; margin-bottom: 15px;" frameborder="0" scrolling="no"></iframe>
-</div>
+  </div>
+  <div class="black">
+      <vue-event-calendar :events="events"></vue-event-calendar>
+  </div>
   </div>
 </template>
 
+
 <script>
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      events: [{
+        date: '2017/11/23', 
+        title: 'Literary Rebellion',
+        desc: 'In the photo exhibition Literary Rebellion, twelve Nobel Laureates in Literature are depcited in the Spanish photographer Kim Manresa’s gripping and beautiful images.',
+      }, {
+        date: '2017/11/29',
+        title: 'Shifting Boundaries',
+        desc: '',
+      },{
+        date: '2017/12/08',
+        title: 'Nobel Prize Concert',
+        desc: 'The internationally renowned conductor Gustavo Dudamel will be conducting the Royal Stockholm Philharmonic Orchestra at the 2017 Nobel Prize Concert.',
+      }]
     }
   }
 }
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
@@ -146,6 +162,9 @@ a {
 
 }
 
+.black .title {
+  color: black;
+}
 
 #myCarousel {
   height: 80vh;
