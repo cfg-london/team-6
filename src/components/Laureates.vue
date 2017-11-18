@@ -117,7 +117,7 @@ export default {
         highlightOnHover: false
       },
       fills: {
-        defaultFill: '#ABDDA4',
+        defaultFill: 'gold',
         USA: 'blue',
         RUS: 'red'
       }
@@ -178,7 +178,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: gold;
 }
 
 .landing {
@@ -243,4 +243,5 @@ table {
 .container {
   height: 100%;
 }
+
 </style>
