@@ -28,10 +28,24 @@ class Last_Name(Resource):
     query = conn.execute(statement)
     return {last_name : [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
 
+class GenericSearch(Resource):
+    def get(self, search_query):
+        conn = db_connect.connect()
+        all_laureates = conn.execute("select * from laureates")
+        return all_laureates
+        #string_to_search = search_query.replace('_', ' ')
+        #for l in all_laureates:
+            #match_score = 0
+
+            
+            
+
 class Query(Resource):
-api.add_resource(Laureates, '/laureates')
-api.add_resource(First_Name, '/first_name/<first_name>')
-api.add_resource(Last_Name, '/last_name/<last_name>')
+    api.add_resource(Laureates, '/laureates')
+    api.add_resource(First_Name, '/first_name/<first_name>')
+    api.add_resource(Last_Name, '/last_name/<last_name>')
+    api.add_resource(GenericSearch, '/search/<search_query>')
+
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port='5002')
