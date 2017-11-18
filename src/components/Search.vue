@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-				<label class="mdl-button mdl-js-button mdl-button--icon" for="site-search">
-					<i class="material-icons">search</i>
-				</label>
-				<div class="mdl-textfield__expandable-holder">
-					<input class="mdl-textfield__input" type="search" id="site-search" />
-					<label class="mdl-textfield__label" for="site-search">search</label>
-				</div>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
     </div>
     <table>
     <tr>
@@ -101,5 +101,21 @@ th, td {
     color: #FFF;
     padding: 15px;
     text-align: center;
+}
+
+.nav-wrapper {
+  position: fixed;
+}
+
+#search {
+  font-size: 30px;
+}
+
+table {
+  margin: 70px 0 0 0;
+}
+
+.container {
+  height: 300vh;
 }
 </style>
