@@ -12,9 +12,18 @@ class Laureates(Resource):
   def get(self):
     conn = db_connect.connect()
     query = conn.execute("select * from laureates")
-    return {'laureates' : [i[0] for i in query.cursor.fetchall()]}
+    return {'laureates' : [i for i in query.cursor.fetchall()]}
+
+class First_Name(Resource):
+  def get(self, first_name):
+    conn = db_connect.connect()
+    statement = "select * from laureates where firstname = \"" + first_name + "\""
+    query = conn.execute(statement)
+    return {first_name : [i for i in query.cursor.fetchall()]}
+
 
 api.add_resource(Laureates, '/laureates')
+api.add_resource(First_Name, '/first_name/<first_name>')
 
 if __name__ == '__main__':
   app.run(port='5002')
