@@ -54,17 +54,9 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-    <!-- <div class="row">
-      <div class="col image-wrapper">
-        <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
-      </div>
-      <div class="col">
-        <h1>Nobel Prize Center</h1>
-      </div>
-    </div> -->
-    <div style="max-width:450px;">
-<iframe width="100%" height="300"  src="https://www.nobelprize.org/mediaplayer/embed_front_vod_tb.html?id=2723" style="border:0;margin-bottom:0px; margin-bottom: 15px;" frameborder="0" scrolling="no"></iframe>
-  </div>
+  <span style="color: #ffffff; margin: 0px; display: block; padding: 22px; font-size: 20pt; font-family: monospace; background-color: #222222;">
+    Events
+  </span>
   <div class="black">
       <vue-event-calendar :events="events"></vue-event-calendar>
   </div>
