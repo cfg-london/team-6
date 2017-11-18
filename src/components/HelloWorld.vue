@@ -21,12 +21,26 @@
       </div>
     </div>
 
-    <div class="item active">
-      <img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" alt="Chicago">
+    <div class="item">
+      <div class="container">
+        <div class="image-wrapper">
+          <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
+        </div>
+        <div class="caption-wrapper">
+          <h1>Nobel Prize Center</h1>
+        </div>
+      </div>
     </div>
 
     <div class="item">
-      <img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" alt="New York">
+      <div class="container">
+        <div class="image-wrapper">
+          <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
+        </div>
+        <div class="caption-wrapper">
+          <h1>Nobel Prize Center</h1>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -40,14 +54,14 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col image-wrapper">
         <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
       </div>
       <div class="col">
         <h1>Nobel Prize Center</h1>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -97,11 +111,13 @@ a {
 }
 
 .image-wrapper img {
-  width: 40%;
+  width: 60%;
 }
 
 .image-wrapper {
   padding: 100px 0;
+  width: 50%;
+  float: left;
 }
 
 .col h1 {
@@ -123,12 +139,10 @@ a {
 .caption-wrapper {
   width: 50%;
   float: left;
+  padding: 100px 0;
+
 }
 
-.image-wrapper {
-  width: 50%;
-  float: left;
-}
 
 #myCarousel {
   height: 80vh;
