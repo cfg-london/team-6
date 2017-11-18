@@ -15,7 +15,6 @@
           <li><router-link to='/nomination'>Nomination</router-link></li>
           <li><router-link to='ceremonies'>Ceremonies</router-link></li>
           <li><router-link to='/alfred_nobel'>Alfred Nobel</router-link></li>
-          <li><router-link to='/education'>Educational</router-link></li>
           <li><router-link to='/events'>Events</router-link></li>
         </ul>
       </div>
