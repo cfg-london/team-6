@@ -21,7 +21,12 @@ sql_command = """
 cursor = connection.cursor()
 cursor.execute(sql_command)
 
-cursor.execute(sql_command)
+p1 = Laureate(1, "a.com", "b.com", [1, 2, 3], "pordi", "jack", "1900-01-01", "2000-01-01", 2)
+
+str_list = ''.join(str(e) for e in p1.prize_list)
+
+cursor.execute("INSERT INTO laureate VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
+(p1.id, 1, p1.image_link, p1.wiki_link, str_list, p1.entity.firstname, p1.entity.lastname, p1.entity.dob, p1.entity.dod, p1.entity.gender, None))
 
 cursor.execute('SELECT * from laureate')
 
