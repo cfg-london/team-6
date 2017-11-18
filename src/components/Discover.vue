@@ -3,23 +3,66 @@
     <span style="color: #ffffff; display: block; padding: 10px; text-align: center;">
       Nine Nobel Prize laureates who have changed the world - click on their links to find out more!
     </span>
-    <table style="width:100%">
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-      </tr>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>80</td>
-      </tr>
-    </table>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+    </div>
+        <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -90,5 +133,13 @@ a {
 .landing {
   width: 100%;
   font-family: "Roboto Mono", monospace;
+}
+
+.row h3 {
+  color: white;
+}
+
+.row img {
+  width: 100%;
 }
 </style>
