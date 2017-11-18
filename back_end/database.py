@@ -1,23 +1,31 @@
 import sqlite3
 from laureate_class import Laureate
+from caller import Caller
 
 connection = sqlite3.connect("test.db")
 
 cursor = connection.cursor()
-cursor.execute("CREATE TABLE IF NOT EXISTS laureate (id int, poo bit, image_link VARCHAR(30), wiki_link VARCHAR(30), prize_list VARCHAR(30), first_name VARCHAR(30), last_name VARCHAR(30), dob DATE, dod DATE, gender int, organisation VARCHAR(30));")
+cursor.execute("""CREATE TABLE IF NOT EXISTS laureate (
+  id int,
+  poo bit,
+  image_link VARCHAR(30), 
+  wiki_link VARCHAR(30), 
+  prize_list VARCHAR(30),
+  firstname VARCHAR(30), 
+  surname VARCHAR(30), 
+  dob DATE, 
+  dod DATE, 
+  gender int,
+  born_city VARCHAR(30),
+  born_country VARCHAR(30), 
+  organisation VARCHAR(30));""")
 
-p1 = Laureate(1, "a.com", "b.com", [1, 2, 3], "pordi", "jack", "1900-01-01", "2000-01-r1", 2)
-p2 = Laureate(2, "c.com", "d.com", [3, 2, 1], "p", "smitjk", "1955-01-01", "2320-01-01", 2)
+api = Caller()
+api.initialize_prize_pool()
 
-laureate_list = [p1, p2]
+for id, laureate in api.laureate_pool.items(): 
+  cursor.execute("INSERT INTO laureate VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (laureate.id, 1, laureate.image_link, laureate.wiki_link, str(laureate.prize_list), laureate.firstname, laureate.surname, laureate.dob, laureate.dod, laureate.gender, None))
 
-for laureate in laureate_list:
-  str_list = ''.join(str(e) for e in p1.prize_list)
-  cursor.execute("INSERT INTO laureate VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (laureate.id, 1, laureate.image_link, laureate.wiki_link, str_list, laureate.entity.firstname, laureate.entity.lastname, laureate.entity.dob, laureate.entity.dod, laureate.entity.gender, None))
-
-name = "p"
-
-cursor.execute("SELECT * FROM laureate WHERE first_name=?", (name))
 
 print (cursor.fetchall())
 connection.commit()

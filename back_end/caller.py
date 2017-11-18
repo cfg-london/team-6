@@ -42,10 +42,10 @@ class Caller(object):
             l.show()
 
 
-api = Caller()
-api.initialize_prize_pool()
+#api = Caller()
+#api.initialize_prize_pool()
 #print(json.dumps(api.get_all_laureates(), indent=4, sort_keys=True))
-api.show_all_laureates()
+#api.show_all_laureates()
 
 
  

@@ -57,7 +57,63 @@
           <a class="waves-effect waves-light btn-large">Subscribe</a>
           <h2>to our new letter!</h2>
         </div>
+        <div class="col s12 m12">
+          <div class="card-panel teal">
+            <span class="white-text">
+                Get to know our latest news about Nobel Prize
+            </span>
+          </div>
       </div>
+      </div>
+      
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 </template>
@@ -125,6 +181,9 @@ a {
   height: 80vh;
 }
 
+.white-text {
+    text-align: center;
+}
 
 .landing {
   width: 100%;
