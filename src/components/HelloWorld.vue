@@ -13,10 +13,10 @@
     <div class="item active">
       <div class="container">
         <div class="image-wrapper">
-          <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
+          <img src="https://pbs.twimg.com/media/DMBRXyBXcAApx-T.jpg:large" alt="nobel">
         </div>
         <div class="caption-wrapper">
-          <h1>Nobel Prize Center</h1>
+          <h3>Discover the artist behind the striking illustrations of the new Nobel Laureates: Niklas Elmehed!</h3>
         </div>
       </div>
     </div>
@@ -24,10 +24,10 @@
     <div class="item">
       <div class="container">
         <div class="image-wrapper">
-          <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
+          <img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/23157201_10155067285644103_7306413616051286343_o.jpg?oh=c2a4d49d519090246532e3292b7668c0&oe=5AA50350" alt="Marie Curie">
         </div>
         <div class="caption-wrapper">
-          <h1>Nobel Prize Center</h1>
+          <h3>Happy birthday to Marie Curie, née Sklodowska, who was born 150 years ago on this day!</h3>
         </div>
       </div>
     </div>
@@ -35,10 +35,10 @@
     <div class="item">
       <div class="container">
         <div class="image-wrapper">
-          <img src="http://nobelcenter.se/wp-content/uploads/2017/10/nobelcenter_Water_night_webb-portrait.jpg" alt="nobel center">
+          <img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/22528529_10155031777039103_833504752671532045_n.jpg?oh=03c554a42733f916ceed50ca741f2548&oe=5A9350AA" alt="Subramanyan Chandrasekhar">
         </div>
         <div class="caption-wrapper">
-          <h1>Nobel Prize Center</h1>
+          <h3> The star cluster image shown below is taken from NASA's Chandra Observatory, named after Chandrasekhar. </h3>
         </div>
       </div>
     </div>
@@ -95,6 +95,12 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
+
+h3 {
+  font-weight: normal;
+  text-align: left;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -125,7 +131,7 @@ a {
 }
 
 .image-wrapper img {
-  width: 60%;
+  width: 90%;
 }
 
 .image-wrapper {
