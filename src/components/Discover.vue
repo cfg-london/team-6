@@ -93,6 +93,11 @@ li {
 a {
   color: #42b983;
 }
+
+.container[data-v-abffd2d8] {
+    height: 100%;
+}
+
 .landing {
   background-color: black;
   height: 100vh;
