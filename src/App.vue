@@ -7,15 +7,15 @@
           <router-link to='/'>Nobel Prize</router-link>
         </div> -->
         
-        <img src="../static/images/logo.png">
+        <img src="../static/images/logo.png" />
 
-        <ul id="nav-brand" class="right hide-on-med-and-down">
+        <ul id="nav-brand" class="right hide-on-med-and-down" style="padding-right:40px">
           <li><router-link to='/'>Home</router-link></li>
-          <li><router-link to='/nobel_prizes'>Nobel Prizes and Laureates</router-link></li>
-          <li><router-link to='/nomination'>Nomination</router-link></li>
+          <li><router-link to='/discover'>Discover</router-link></li>          
+          <li><router-link to='/nobel_prizes'>Laureates</router-link></li>
+          <li><router-link to='/nomination'>Nominations</router-link></li>
           <li><router-link to='ceremonies'>Ceremonies</router-link></li>
-          <li><router-link to='/alfred_nobel'>Alfred Nobel</router-link></li>
-          <li><router-link to='/events'>Events</router-link></li>
+          <li><router-link to='/alfred_nobel'>About</router-link></li>
         </ul>
       </div>
     </nav>
@@ -35,7 +35,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
 }
 
@@ -45,6 +45,10 @@ nav {
 
 nav ul a {
   color: black;
+}
+
+nav img {
+  padding-left: 40px;
 }
 
 #app {

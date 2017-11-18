@@ -54,7 +54,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-  <span style="color: #ffffff; margin: 0px; display: block; padding: 22px; font-size: 20pt; font-family: monospace; background-color: #222222;">
+  <span style="color: #ffffff; margin: 0px; display: block; padding: 22px; font-size: 20pt; text-align: center; font-family: monospace; background-color: #222222;">
     Events
   </span>
   <div class="black">
