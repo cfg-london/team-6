@@ -15,9 +15,6 @@
         </name-card>
       </a>
     </div>
-    <div class="white right">
-      Relevant information
-    </div>
   </div>
 </template>
 
