@@ -54,11 +54,13 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-  <span style="color: #ffffff; margin: 0px; display: block; padding: 22px; font-size: 20pt; font-family: monospace; background-color: #222222;">
-    Events
-  </span>
-  <div class="black">
+  <div class="event-wrapper">
+    <h1 style="color: #ffffff; margin: 0px; display: block; padding: 22px; font-size: 20pt; font-family: monospace; background-color: #222222;">
+      Events
+    </h1>
+    <div class="black">
       <vue-event-calendar :events="events"></vue-event-calendar>
+    </div>
   </div>
   <footer>
     <span>Copyright 2017</span>
@@ -108,7 +110,7 @@ a {
 }
 .landing {
   background-color: black;
-  height: 100vh;
+  /* height: 100vh; */
   color: white;
 }
 
@@ -167,6 +169,7 @@ a {
 
 footer {
   margin: 20vh 0 0 0;
+  text-align: center;
 }
 
 footer span {
