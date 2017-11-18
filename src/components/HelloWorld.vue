@@ -60,6 +60,9 @@
   <div class="black">
       <vue-event-calendar :events="events"></vue-event-calendar>
   </div>
+  <footer>
+    <span>Copyright 2017</span>
+  </footer>
   </div>
 </template>
 
@@ -160,5 +163,13 @@ a {
 
 #myCarousel {
   height: 80vh;
+}
+
+footer {
+  margin: 20vh 0 0 0;
+}
+
+footer span {
+  color: white;
 }
 </style>

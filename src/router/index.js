@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Search from '@/components/Search'
+import Map from '@/components/Map'
 import 'vue-material-design-icons/styles.css'
 
 import Article from '@/components/Article'
@@ -43,6 +44,11 @@ export default new Router({
       path: '/article',
       name: 'Article',
       component: Article
+    },
+    {
+      path: '/map',
+      name: 'Map',
+      component: Map
     }
   ]
 })
