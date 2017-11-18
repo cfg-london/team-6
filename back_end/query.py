@@ -32,10 +32,12 @@ class GenericSearch(Resource):
     def get(self, search_query):
         conn = db_connect.connect()
         all_laureates = conn.execute("select * from laureates")
-        return all_laureates
-        #string_to_search = search_query.replace('_', ' ')
-        #for l in all_laureates:
-            #match_score = 0
+        return_json = {}
+        string_to_search = search_query.replace('_', ' ')
+        for l in all_laureates:
+            match_score = 0
+            match_score = 600
+            return l
 
             
             
