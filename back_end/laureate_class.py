@@ -4,21 +4,49 @@ import prize
 
 class Laureate(object):
 
+
     def __init__(self, data):
-    #def __init__(self, ID, image_link, wiki_link, prize_list, *args):
+        switcher = {
+                'physics': 10000,
+                'chemistry': 20000,
+                'medicine' : 30000,
+                'peace'    : 40000,
+                'literature': 50000,
+                'economics': 60000,
+                }
         self.id = int(data['id'])
         self.image_link = ""
         self.wiki_link = ""
-        self.prize_list = prize_list # List of integers representing Prizes
-        if len(args) == 5:
-            self.entity = Person(args[0], args[1], args[2], args[3], args[4])
-            self.isperson = 1
-        elif len(args) == 1:
-            self.entity = Organization(args[0])
-            self.isperson = 0
+        self.prize_list = {}
+        for p in data['prizes']:
+            try:
+                return_id = int(p['year'])
+                p_id = return_id + switcher[p['category']]
+                self.prize_list[p_id] = p
+            except:
+                pass
+        self.dob = data['born']
+        self.dod = data['died']
+        print(json.dumps(data, indent=4, sort_keys=True))
+        try:
+            self.firstname = data['firstname']
+            self.gender = data['gender']
+        except:
+            self.firstname = ""
+            self.gender = ""
+        try:
+            self.surname = data['surname']
+            #self.born_city = data['bornCity']
+            self.born_country = data['bornCountry']
+        except:
+            self.surname = ""
+            self.born_city = ""
+            self.born_country = ""
+            #print("Exception!" + json.dumps(data, indent=4, sort_keys=True))
 
-    def display_laureate(self):
-        print(self.entity.description() + "and has a laureate ID of " + str(self.id ))
+    def show(self):
+        
+        print(self.firstname + " " + self.surname + "has a laureate ID of " + str(self.id ) + " and was awarded the nobel prizes: " + str(self.prize_list.items()))
 
         
 class Person(object):

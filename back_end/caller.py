@@ -8,6 +8,10 @@ class Caller(object):
 
     def __init__(self):
         self.url = "http://api.nobelprize.org/v1/"
+        self.get_all_laureates()
+        self.get_all_prizes()
+        self.initialize_laureate_pool()
+        self.initialize_prize_pool()
 
     def get_all_laureates(self):
         self.laureate_list = requests.get(self.url + "laureate.json?").json()['laureates']
@@ -33,10 +37,15 @@ class Caller(object):
         for id, p in self.prize_pool.items():
             p.show()
 
+    def show_all_laureates(self):
+        for id, l in self.laureate_pool.items():
+            l.show()
+
 
 api = Caller()
 api.initialize_prize_pool()
-print(json.dumps(api.get_all_laureates(), indent=4, sort_keys=True))
+#print(json.dumps(api.get_all_laureates(), indent=4, sort_keys=True))
+api.show_all_laureates()
 
 
  
