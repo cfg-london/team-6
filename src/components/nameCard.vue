@@ -9,7 +9,7 @@
         <p>{{introduction}}</p>
       </div>
       <div class="card-action">
-        <a v-bind:href="link">Click here for more informations</a>
+        <a v-bind:href="link">Click here for more information</a>
       </div>
     </div>
   </div>

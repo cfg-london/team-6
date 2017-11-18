@@ -3,10 +3,10 @@ from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
 from flask.ext.jsonpify import jsonpify
+from flask_cors import CORS, cross_origin
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 
-db_connect = create_engine('sqlite:///database.db')
-app = Flask(__name__)
-api = Api(app)
 
 class Laureates(Resource):
   def get(self):
@@ -35,10 +35,24 @@ class GenericSearch(Resource):
         return_json = {}
         string_to_search = search_query.replace('_', ' ')
         for l in all_laureates:
+            d = dict(l.items())
             match_score = 0
-            match_score = 600
-            return l
-
+            words = string_to_search.split(' ')
+            for word in words:
+                match_score += 40 * fuzz.ratio(word, d['firstname'].lower())
+                match_score += 60 * fuzz.ratio(word, d['surname'].lower())
+            match_score += 3 * fuzz.ratio(search_query, d['dob'])
+            match_score += 3 * fuzz.ratio(search_query, d['dod'])
+            match_score += 5 * fuzz.ratio(search_query, d['born_city'])
+            match_score += 4 * fuzz.ratio(search_query, d['born_country'])
+            match_score += 15 * fuzz.partial_ratio(search_query, d['organisation'])
+            #match_score += fuzz.ratio(search_query, d['description']) * len(d['description'])
+            return_json[match_score] = d
+        return_entries = []
+        for score, entry in reversed(sorted(return_json.items())):
+            entry['score'] = score
+            return_entries.append(entry)
+        return return_entries[:10]
             
 
 class Full_Name(Resource):
@@ -61,12 +75,17 @@ class Random(Resource):
 
 
 
-api.add_resource(Laureates, '/laureates')
-api.add_resource(First_Name, '/first_name/<first_name>')
-api.add_resource(Last_Name, '/last_name/<last_name>')
-api.add_resource(Full_Name, '/full_name/<full_name>')
-api.add_resource(GenericSearch, '/search/<search_query>')
-api.add_resource(Random, '/random/<number>')
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port='5002')
+    db_connect = create_engine('sqlite:///database.db')
+    app = Flask(__name__)
+    CORS(app)
+    api = Api(app)
+    api.add_resource(Laureates, '/laureates')
+    api.add_resource(First_Name, '/first_name/<first_name>')
+    api.add_resource(Last_Name, '/last_name/<last_name>')
+    api.add_resource(Full_Name, '/full_name/<full_name>')
+    api.add_resource(GenericSearch, '/search/<search_query>')
+    api.add_resource(Random, '/random/<number>')
+    #CORS(api)
+    app.run(host='0.0.0.0', port='5002')
