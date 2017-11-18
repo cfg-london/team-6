@@ -3,7 +3,7 @@
     <span style="color: #ffffff; display: block; padding: 10px; text-align: center;">
       Nine Nobel Prize laureates who have changed the world - click on their links to find out more!
     </span>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-xs-12 col-sm-4">
         <a href="">
           <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
@@ -43,7 +43,7 @@
         </a>
       </div>
     </div>
-        <div class="row">
+    <div class="row">
       <div class="col-xs-12 col-sm-4">
         <a href="">
           <name-card laureate-name="Albert Einstein" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
@@ -62,7 +62,17 @@
           </name-card>
         </a>
       </div>
+    </div> -->
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4" v-for="result in results">
+          <name-card :laureate-name="result.firstname" :image-url="result.image_link" :link="result.wiki_link">
+          </name-card>
+      </div>
+
     </div>
+    
+
   </div>
 </template>
 
@@ -71,8 +81,21 @@ export default {
   name: 'Discover',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      results: []
     }
+  },
+  created: function() {
+      console.log("search query been submitted")
+      this.$http.get('http://34.230.141.99:5002/random/9')
+      .then(function(res) {
+        console.log(res.body);
+        this.results = res.body.Random;
+        // this.imageUrl = this.firstResult.image_link;
+        // this.name = this.firstResult.firstname + ' ' + this.firstResult.surname;
+        // this.wikiLink = this.firstResult.wiki_link;
+      }, function(error) {
+      })
   }
 }
 </script>
