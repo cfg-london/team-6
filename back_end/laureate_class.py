@@ -3,6 +3,7 @@ import requests
 import prize
 import wikipedia as Wiki
 import time
+from itertools import islice
 
 class Laureate(object):
 
