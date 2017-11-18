@@ -1,7 +1,7 @@
 <template>
   
   <div class="container">
-    
+
     <h3 style="padding-top: 20px; color: #ffffff; margin: 0px; text-align: center; display: block; padding: 22px; font-size: 20pt; font-family: monospace; background-color: #000000;">
     [  By Region  ]
     </h3>
@@ -14,19 +14,19 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <a href="">
-          <name-card laureate-name="Pysics Prize" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          <name-card laureate-name="Physics" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
           </name-card>
         </a>
       </div>
       <div class="col-xs-12 col-sm-4">
         <a href="">
-          <name-card laureate-name="Chemistry Prize" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          <name-card laureate-name="Chemistry" image-url="https://www.nobelprize.org/nobel_prizes/chemistry/laureates/1908/rutherford_postcard.jpg">
           </name-card>
         </a>
       </div>
       <div class="col-xs-12 col-sm-4">
         <a href="">
-          <name-card laureate-name="Medicine Prize" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          <name-card laureate-name="Medicine" image-url="https://www.nobelprize.org/nobel_prizes/medicine/laureates/1945/fleming_postcard.jpg">
           </name-card>
         </a>
       </div>
@@ -36,19 +36,19 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <a href="">
-          <name-card laureate-name="Peace Prize" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          <name-card laureate-name="Peace" image-url="https://www.nobelprize.org/nobel_prizes/peace/laureates/1964/king_postcard.jpg">
           </name-card>
         </a>
       </div>
       <div class="col-xs-12 col-sm-4">
         <a href="">
-          <name-card laureate-name="Prize in Economic Science" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          <name-card laureate-name="Economic Science" image-url="https://www.nobelprize.org/nobel_prizes/economic-sciences/laureates/2017/thaler_postcard.jpg">
           </name-card>
         </a>
       </div>
       <div class="col-xs-12 col-sm-4">
         <a href="">
-          <name-card laureate-name="Literature Prize" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          <name-card laureate-name="Literature" image-url="https://www.nobelprize.org/nobel_prizes/literature/laureates/1913/tagore_postcard.jpg">
           </name-card>
         </a>
       </div>
@@ -60,13 +60,13 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <a href="">
-          <name-card laureate-name="Female" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          <name-card laureate-name="Female" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1903/marie-curie_postcard.jpg">
           </name-card>
         </a>
       </div>
       <div class="col-xs-12 col-sm-4">
         <a href="">
-          <name-card laureate-name="Male" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein_postcard.jpg">
+          <name-card laureate-name="Male" image-url="https://www.nobelprize.org/nobel_prizes/physics/laureates/1901/rontgen_postcard.jpg">
           </name-card>
         </a>
       </div>
@@ -74,6 +74,22 @@
 
     <h3 style="color: #ffffff; margin: 0px; text-align: center; display: block; padding: 22px; font-size: 20pt; font-family: monospace; background-color: #000000;">
     [  Individual or Organisation  ]
+
+    </h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Individual" image-url="https://www.nobelprize.org/nobel_prizes/economic-sciences/laureates/1994/nash_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a href="">
+          <name-card laureate-name="Organisation" image-url="https://www.nobelprize.org/nobel_prizes/peace/laureates/2012/eu_postcard.jpg">
+          </name-card>
+        </a>
+      </div>
+    </div>
     </h3>
 
   

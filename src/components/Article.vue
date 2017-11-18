@@ -55,7 +55,7 @@
         </div>
         <div class="col s12 m12 center-align">
           <a class="waves-effect waves-light btn-large">Subscribe</a>
-          <h2>to our new letter!</h2>
+          <h2>to our newsletter!</h2>
         </div>
         <div class="col s12 m12">
           <div class="card-panel teal">
