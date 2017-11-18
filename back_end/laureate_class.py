@@ -63,7 +63,6 @@ class Laureate(object):
         print(self.description)
     
     def get_wiki_info(self):
-        time.sleep(1)
         try:
             if self.firstname != "" and self.surname != "":
                 self.description = Wiki.summary(self.firstname + " "+ self.surname)
