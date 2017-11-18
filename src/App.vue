@@ -7,7 +7,7 @@
           <router-link to='/'>Nobel Prize</router-link>
         </div> -->
         
-        <img class="" src="../static/images/logo.png">
+        <img src="../static/images/logo.png">
 
         <ul id="nav-brand" class="right hide-on-med-and-down">
           <li><router-link to='/'>Home</router-link></li>
@@ -46,10 +46,6 @@ nav {
 
 nav ul a {
   color: black;
-}
-
-nav ul {
-  margin-top:22px;
 }
 
 #app {
